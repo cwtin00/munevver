@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07110e">
+<title>Süreyya Kafe | Menü</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader" class="loader">
+  <div class="loader-logo"><img src="sureyya-logo.png" alt="Süreyya Kafe Logo"></div>
+  <div class="loader-ring"></div>
+  <small>DİJİTAL MENÜ HAZIRLANIYOR</small>
+</div>
+
+<div class="page">
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+<nav class="topbar">
+  <button class="glass-btn" id="menuToggle" aria-label="Menü">☰</button>
+
+  <div class="brand">
+    <div class="hero-wordmark" aria-label="Süreyya Kafe">
+      <img src="sureyya-logo.png" alt="Süreyya Kafe Logo" class="hero-wordmark-icon">
+      <div class="hero-wordmark-text">
+        <b>Süreyya Cafe</b>
+        <span>Ev Yemekleri • Tatlı • İçecek</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="glass-btn" id="searchButton" aria-label="Ara">⌕</button>
+</nav>
+
+    <div class="category-scroller" id="topCategoryScroller"></div>
+  </header>
+
+  <main id="menuArea">
+    <section class="section-intro">
+      <button id="backButton" class="back-button hidden" aria-label="Geri dön">← Geri</button>
+      <span class="eyebrow" id="sectionKicker">LEZZET DOLU</span>
+      <h1 id="sectionTitle">Menü</h1>
+      <p id="sectionText">Süreyya Kafe yemek, çorba, tatlı ve içecek menüsü.</p>
+    </section>
+
+    <section id="categoryGrid" class="feature-grid"></section>
+
+    <section id="productView" class="product-view hidden">
+      <div id="productHeader" class="product-header"></div>
+      <div id="productGrid"></div>
+    </section>
+  </main>
+
+  
+
+  <div class="quote">“İYİ YEMEK, DAHA GÜZEL ANILAR.” <span></span></div>
+
+  <div class="cetinweb-credit">
+  <span>Bu QR Menü</span>
+
+  <a
+    href="https://cetinweb.online"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <strong>CetinWeb</strong> tarafından geliştirilmiştir
+  </a>
+</div>
+
+  <nav class="bottom-nav">
+    <button id="homeButton"><span>⌂</span><small>ANA SAYFA</small></button>
+    <button class="active" id="menuButton"><span>🍴</span><small>MENÜ</small></button>
+    <div class="bottom-logo"><img src="sureyya-logo.png" alt="Süreyya Kafe Logo"></div>
+    <button id="locationButton"><span>⌖</span><small>KONUM</small></button>
+    <button id="instagramButton"><span>◎</span><small>BİZİ TAKİP ET</small></button>
+  </nav>
+</div>
+
+<div id="infoModal" class="modal hidden">
+  <div class="modal-box">
+    <button id="closeModal">×</button>
+    <span>SÜREYYA KAFE</span>
+    <h3>Hoş geldiniz</h3>
+    <p>Kategorilerden dilediğinizi seçerek menümüzü inceleyebilirsiniz.</p>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="menu-data.js"></script>
+<script src="image-fix.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>

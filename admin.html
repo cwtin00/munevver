@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Süreyya Kafe | Admin Panel</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="admin.css"
+  >
+</head>
+
+<body>
+
+  <div class="admin-background"></div>
+
+  <div class="admin-shell">
+
+    <!-- LOGIN -->
+    <section
+      id="loginView"
+      class="login-wrapper"
+    >
+
+      <div class="login-card">
+
+        <div class="login-logo">
+          <img
+            src="sureyya-logo.png"
+            alt="Süreyya Kafe"
+          >
+        </div>
+
+        <div class="login-copy">
+
+          <span class="eyebrow">
+            SÜREYYA KAFE
+          </span>
+
+          <h1>
+            Yönetim Paneli
+          </h1>
+
+          <p>
+            Menü içeriklerinizi güvenli şekilde yönetin.
+          </p>
+
+        </div>
+
+        <form id="loginForm">
+
+          <div class="field">
+            <label>
+              E-posta
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              placeholder="admin@roofcafe.com"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label>
+              Şifre
+            </label>
+
+            <input
+              id="password"
+              type="password"
+              placeholder="Şifrenizi girin"
+              required
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="primary-btn login-btn"
+          >
+            Giriş Yap
+          </button>
+
+        </form>
+
+        <div
+          id="loginMsg"
+          class="msg"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ADMIN PANEL -->
+    <section
+      id="panelView"
+      class="hidden"
+    >
+
+      <header class="admin-header">
+
+        <div class="brand-area">
+
+          <div class="brand-logo">
+            <img
+              src="sureyya-logo.png"
+              alt="Süreyya Kafe"
+            >
+          </div>
+
+          <div>
+
+            <span class="eyebrow">
+              SÜREYYA KAFE
+            </span>
+
+            <h1>
+              Menü Yönetimi
+            </h1>
+
+            <p>
+              Ürünleri, fiyatları ve görünürlüğü yönetin.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+          <a
+            href="index.html"
+            target="_blank"
+            class="secondary-btn"
+          >
+            Menüyü Gör
+          </a>
+
+          <button
+            id="logoutBtn"
+            class="dark-btn"
+          >
+            Çıkış
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <section class="dashboard-bar">
+
+        <div class="connection-box">
+
+          <span class="status-dot"></span>
+
+          <div>
+
+            <b id="statusText">
+              Firebase bağlantısı bekleniyor
+            </b>
+
+            <small>
+              Kaydedilen değişiklikler Firebase’de kalır; siteyi yeniden deploy etseniz bile yayın menüsü Firebase verisini kullanır.
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <button
+          id="saveBtn"
+          class="primary-btn save-btn"
+        >
+          Tüm Değişiklikleri Kaydet
+        </button>
+
+      </section>
+
+
+      <div
+        id="panelMsg"
+        class="msg panel-message"
+      ></div>
+
+
+      <section class="editor-section">
+
+        <div class="editor-title">
+
+          <div>
+
+            <span class="eyebrow">
+              MENÜ
+            </span>
+
+            <h2>
+              Kategoriler ve Ürünler
+            </h2>
+
+          </div>
+
+          <p>
+            Ürün adlarını, fiyatlarını, açıklamalarını ve aktiflik durumlarını düzenleyebilirsiniz.
+          </p>
+
+        </div>
+
+
+        <div id="editor"></div>
+
+      </section>
+
+    </section>
+
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+
+  <script src="menu-data.js"></script>
+<script src="image-fix.js"></script>
+
+  <script src="admin.js"></script>
+
+</body>
+
+</html>
