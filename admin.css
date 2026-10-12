@@ -1090,3 +1090,43 @@ button,a{transition:background-color .2s,color .2s,border-color .2s}
 .danger-btn:hover{filter:brightness(.98)}
 .login-logo img,.brand-logo img{filter:drop-shadow(0 8px 20px rgba(90,52,40,.16))}
 @media (max-width:700px){.section-actions{justify-content:stretch}.add-product-btn{width:100%}.product-actions{justify-content:stretch}.danger-btn{width:100%}}
+
+
+/* 2026 easy dark green admin refresh */
+:root{--bg:#0b1712;--bg-soft:#10211a;--card:#13261e;--card-2:#193126;--line:rgba(235,240,232,.10);--line-strong:rgba(235,240,232,.16);--text:#f3efe6;--muted:#afbab2;--orange:#d6b27d;--orange-hover:#e2c392;--green:#214235}
+body{background:radial-gradient(circle at top right,rgba(214,178,125,.10),transparent 28%),linear-gradient(180deg,#07110d 0%,#0c1713 100%);color:var(--text)}
+.admin-background{opacity:.22}
+.login-card,.dashboard-bar,.category,.product-section,.subcategory-block,.modal-box{background:linear-gradient(180deg,rgba(19,38,30,.96),rgba(13,27,21,.98))!important;border-color:var(--line)!important;color:var(--text)}
+.login-card{box-shadow:0 28px 60px rgba(0,0,0,.35)}
+.login-copy p,.connection-box small,.editor-title p,.msg,.switch,.category-name span{color:var(--muted)!important}
+.field label,.connection-box b,.editor-title h2,.product-section-title h4,.category-name h3,.subcategory-header h4{color:var(--text)!important}
+input,textarea{background:#0e2018!important;border:1px solid rgba(255,255,255,.10)!important;color:#f5f0e8!important}
+input::placeholder,textarea::placeholder{color:#94a399}
+.primary-btn,.add-product-btn{background:linear-gradient(135deg,#315746,#234235)!important;color:#f4efe5!important;border:1px solid rgba(255,255,255,.08)!important;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.primary-btn:hover,.add-product-btn:hover{filter:brightness(1.05)}
+.secondary-btn,.dark-btn,.category-toggle,.quick-chip{background:#10211a!important;color:#ebeadf!important;border:1px solid rgba(255,255,255,.10)!important;border-radius:12px}
+.dark-btn{background:#203a2f!important}
+.category-header{background:linear-gradient(135deg,#173126,#11261d)!important;cursor:default}
+.category-index{background:linear-gradient(135deg,#d6b27d,#b7925e)!important;color:#253127!important}
+.product-count,.order-btn{color:#d8bd90!important;background:rgba(214,178,125,.10)!important;border-color:rgba(214,178,125,.18)!important}
+.order-btn:hover{background:rgba(214,178,125,.17)!important}
+.product-card{background:#102019!important;border-color:rgba(255,255,255,.08)!important;grid-template-columns:auto minmax(0,1.3fr) 150px auto!important}
+.product-price input{color:#e3c897!important;background:#12251d!important}
+.add-product-btn{padding:13px 16px!important}
+.danger-btn{background:#4b2424!important;color:#ffd9d6!important}
+.quick-admin{margin:0 0 18px;padding:18px 20px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(18,35,28,.96),rgba(12,25,20,.98))}
+.quick-guide{padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.04);color:var(--muted);font-size:14px;line-height:1.6}
+.quick-guide strong,.quick-guide b{color:var(--text)}
+.quick-tools{display:grid;gap:14px;margin-top:14px}
+#adminSearch{height:50px;font-size:15px;border-radius:14px}
+.quick-category-nav{display:flex;gap:10px;flex-wrap:wrap}
+.quick-chip{padding:11px 14px;font-weight:800;cursor:pointer}
+.quick-chip.active{background:linear-gradient(135deg,#315746,#244336)!important;color:#fff!important;border-color:rgba(255,255,255,.16)!important}
+.admin-no-results{margin-top:12px;padding:14px 16px;border-radius:14px;background:rgba(214,178,125,.09);color:#ecd7b4}
+.category-body{display:none}
+.category.is-open .category-body{display:block}
+.category-toggle{padding:10px 14px;font-weight:800;cursor:pointer}
+.category-settings{flex-wrap:wrap;justify-content:flex-end}
+.section-actions,.product-actions{justify-content:flex-start}
+.section-actions .add-product-btn,.product-actions .danger-btn{min-height:44px}
+@media (max-width:900px){.product-card{grid-template-columns:1fr!important}.category-settings{width:100%;justify-content:space-between}.quick-category-nav{overflow:auto;flex-wrap:nowrap;padding-bottom:4px}.quick-chip{white-space:nowrap}}

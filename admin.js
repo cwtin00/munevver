@@ -16,8 +16,19 @@ const editor =
 const panelMsg =
   document.getElementById("panelMsg");
 
+const adminSearch =
+  document.getElementById("adminSearch");
+
+const quickCategoryNav =
+  document.getElementById("quickCategoryNav");
+
+const adminNoResults =
+  document.getElementById("adminNoResults");
+
 
 let adminMenu = [];
+let currentSearch = "";
+let openCategories = new Set([0]);
 
 
 const clone = x =>
@@ -435,8 +446,9 @@ function render() {
         return `
 
           <section
-            class="category"
+            class="category ${openCategories.has(ci) ? "is-open" : ""}"
             data-ci="${ci}"
+            data-search="${esc(c.name || "")}"
           >
 
             <div
@@ -498,6 +510,8 @@ function render() {
                   Kategori aktif
 
                 </label>
+
+                <button type="button" class="category-toggle" data-toggle-category="${ci}">${openCategories.has(ci) ? "Kapat" : "Aç"}</button>
 
               </div>
 
@@ -616,6 +630,8 @@ function render() {
 
 
   bind();
+  renderQuickCategoryNav();
+  applySearchFilter();
 
 }
 
@@ -632,6 +648,7 @@ function subHTML(
       class="subcategory-block"
       data-ci="${ci}"
       data-si="${si}"
+      data-search="${esc(`${s.name || ""} ${s.subtitle || ""}`)}"
     >
 
       <div
@@ -788,6 +805,7 @@ function prodHTML(
           : si
       }"
       data-pi="${pi}"
+      data-search="${esc(`${p.name || ""} ${p.price || ""} ${p.desc || ""}`)}"
     >
 
       <div class="product-order-controls">
@@ -908,6 +926,100 @@ function prodHTML(
     </div>
 
   `;
+
+}
+
+
+function renderQuickCategoryNav() {
+
+  if(!quickCategoryNav) return;
+
+  quickCategoryNav.innerHTML = adminMenu.map((c, ci) => `
+    <button
+      type="button"
+      class="quick-chip ${openCategories.has(ci) ? "active" : ""}"
+      data-jump-category="${ci}"
+    >${esc(c.name || `Kategori ${ci + 1}`)}</button>
+  `).join("");
+
+  quickCategoryNav
+    .querySelectorAll("[data-jump-category]")
+    .forEach(btn => {
+      btn.onclick = () => {
+        const ci = +btn.dataset.jumpCategory;
+        openCategories = new Set([ci]);
+        render();
+        const target = editor.querySelector(`.category[data-ci="${ci}"]`);
+        if(target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
+    });
+
+}
+
+
+function applySearchFilter() {
+
+  const q = normalizeKey(currentSearch);
+  const categories = [...editor.querySelectorAll(".category")];
+
+  let visibleCategories = 0;
+
+  categories.forEach(section => {
+
+    if(!q) {
+      section.style.display = "";
+
+      section.querySelectorAll(".product-card, .subcategory-block, .product-section").forEach(el => {
+        el.style.display = "";
+      });
+
+      if(openCategories.has(+section.dataset.ci)) {
+        section.classList.add("is-open");
+      } else {
+        section.classList.remove("is-open");
+      }
+
+      return;
+    }
+
+    const categoryMatch = normalizeKey(section.dataset.search || "").includes(q);
+
+    let sectionVisible = categoryMatch;
+
+    section.querySelectorAll('.product-card').forEach(card => {
+      const cardMatch = categoryMatch || normalizeKey(card.dataset.search || "").includes(q);
+      card.style.display = cardMatch ? "" : "none";
+      if(cardMatch) sectionVisible = true;
+    });
+
+    section.querySelectorAll('.subcategory-block').forEach(sub => {
+      const subMatch = categoryMatch || normalizeKey(sub.dataset.search || "").includes(q);
+      let subVisible = subMatch;
+      const visibleCards = [...sub.querySelectorAll('.product-card')].filter(card => card.style.display !== 'none').length;
+      if(visibleCards > 0) subVisible = true;
+      sub.style.display = subVisible ? "" : "none";
+      if(subVisible) sectionVisible = true;
+    });
+
+    section.querySelectorAll('.category-body > .product-section').forEach(prodSection => {
+      const visibleCards = [...prodSection.querySelectorAll('.product-card')].filter(card => card.style.display !== 'none').length;
+      const showSection = categoryMatch || visibleCards > 0;
+      prodSection.style.display = showSection ? "" : "none";
+      if(showSection) sectionVisible = true;
+    });
+
+    section.style.display = sectionVisible ? "" : "none";
+    section.classList.toggle('is-open', sectionVisible);
+
+    if(sectionVisible) visibleCategories += 1;
+
+  });
+
+  if(adminNoResults) {
+    adminNoResults.classList.toggle('hidden', visibleCategories !== 0 || !q);
+  }
 
 }
 
@@ -1099,6 +1211,29 @@ function bind() {
             ? el.checked
 
             : el.value;
+
+      };
+
+    });
+
+
+  editor
+    .querySelectorAll(
+      "[data-toggle-category]"
+    )
+    .forEach(btn => {
+
+      btn.onclick = () => {
+
+        const ci = +btn.dataset.toggleCategory;
+
+        if(openCategories.has(ci)) {
+          openCategories.delete(ci);
+        } else {
+          openCategories.add(ci);
+        }
+
+        render();
 
       };
 

@@ -384,3 +384,41 @@ body{background:#eee2d4;color:var(--text);overflow-x:hidden}
 .hero-wordmark-text span{display:block;margin-top:6px;color:#9c6b5a;font-size:clamp(8px,1.2vw,11px);font-weight:800;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
 @media(max-width:680px){.hero-wordmark{padding:8px 12px;gap:10px;max-width:100%}.hero-wordmark-icon{width:50px;height:50px}.hero-wordmark-text b{font-size:18px}.hero-wordmark-text span{font-size:7px;letter-spacing:.11em}}
 @media(max-width:430px){.topbar{grid-template-columns:44px minmax(0,1fr) 44px;padding:18px 14px 0;column-gap:8px}.glass-btn{width:42px;height:42px}.hero-wordmark{padding:7px 10px;gap:8px}.hero-wordmark-icon{width:42px;height:42px}.hero-wordmark-text b{font-size:15px}.hero-wordmark-text span{font-size:6px;letter-spacing:.08em}}
+
+
+/* 2026 dark green public refresh */
+:root{--bg:#0a1511;--panel:#102019;--panel2:#143126;--green:#294337;--orange:#d1ae79;--orange2:#ebd4aa;--text:#f4f0e8;--muted:#b7c1bb;--line:rgba(255,255,255,.10)}
+body{background:#07110d}
+.page{background:radial-gradient(circle at 12% 16%,rgba(209,174,121,.08),transparent 24%),linear-gradient(180deg,#0a1511,#0c1813)}
+.hero-overlay{background:linear-gradient(to bottom,rgba(4,10,7,.20),rgba(6,17,12,.66) 65%,var(--bg)),linear-gradient(90deg,rgba(3,12,9,.78),rgba(4,14,10,.22),rgba(3,12,9,.58))}
+.glass-btn{background:rgba(6,18,13,.44);border-color:rgba(255,255,255,.16)}
+.top-cat.active{border:2px solid var(--orange)}
+.top-cat.active:before{background:rgba(209,174,121,.18)}
+.feature-card,.kitchen-card,.product,.modal-box,.product-header{border-color:rgba(255,255,255,.08)}
+.product{background:linear-gradient(180deg,#112219,#0c1713)}
+.price{color:var(--orange2);background:rgba(209,174,121,.10);border-color:rgba(209,174,121,.22)}
+.bottom-nav{background:rgba(8,18,14,.97)}
+.bottom-nav button.active{color:var(--orange)}
+.bottom-logo{background:#0d1a15}
+.section-intro p,.product-info p,.modal-box p,.quote{color:var(--muted)}
+.hero-wordmark{background:rgba(9,25,18,.72);border-color:rgba(255,255,255,.13);box-shadow:0 14px 30px rgba(0,0,0,.22)}
+.hero-wordmark-text b{color:#f4f0e8}
+.hero-wordmark-text span{color:#d4b581}
+.hero-wordmark-icon{filter:drop-shadow(0 4px 12px rgba(0,0,0,.18))}
+.cetinweb-credit{border-top-color:rgba(255,255,255,.08)}
+
+
+.menu-bilgilendirme {
+  background: #1b3026;
+  border: 1px solid #3c5947;
+  border-left: 3px solid #c9ac78;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+
+  color: #e8e4d9;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.7;
+  text-align: left;
+}
