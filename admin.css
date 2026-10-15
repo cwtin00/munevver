@@ -1130,3 +1130,19 @@ input::placeholder,textarea::placeholder{color:#94a399}
 .section-actions,.product-actions{justify-content:flex-start}
 .section-actions .add-product-btn,.product-actions .danger-btn{min-height:44px}
 @media (max-width:900px){.product-card{grid-template-columns:1fr!important}.category-settings{width:100%;justify-content:space-between}.quick-category-nav{overflow:auto;flex-wrap:nowrap;padding-bottom:4px}.quick-chip{white-space:nowrap}}
+
+/* soft sage admin palette */
+:root{--bg:#e5eee4;--bg-soft:#e0eade;--card:#f5f9f3;--card-2:#e9f1e7;--line:rgba(76,102,83,.20);--line-strong:rgba(76,102,83,.32);--text:#344d3c;--muted:#65806d;--orange:#55765c;--orange-hover:#3b6147;--green:#64816b}
+body{background:linear-gradient(180deg,#e9f0e7,#dce9dc)!important;color:var(--text)!important}
+.login-card,.dashboard-bar,.category,.product-section,.subcategory-block,.quick-admin{background:#f6faf4!important;border-color:#c7d7c5!important;color:#344d3c!important}
+.login-copy p,.connection-box small,.editor-title p,.msg,.switch,.category-name span,.quick-guide{color:#617a67!important}
+.field label,.connection-box b,.editor-title h2,.product-section-title h4,.category-name h3,.subcategory-header h4,.quick-guide strong,.quick-guide b{color:#365342!important}
+input,textarea{background:#fff!important;border:1px solid #c0d4bf!important;color:#355340!important}
+input::placeholder,textarea::placeholder{color:#839486!important}
+.category-header{background:#dcebdc!important;color:#34543e!important}
+.product-card{background:#fff!important;border-color:#d2e0d0!important}
+.primary-btn,.add-product-btn,.quick-chip.active{background:#55795d!important;color:#fff!important}
+.secondary-btn,.dark-btn,.category-toggle,.quick-chip{background:#e2eee0!important;color:#365744!important;border-color:#bfd3c0!important}
+.quick-guide{background:#e8f1e6!important}.product-price input{background:#edf6ec!important;color:#355f40!important}
+.category-index{background:#608568!important;color:#fff!important}.product-count,.order-btn{background:#e1eee0!important;color:#365d41!important;border-color:#c4d7c3!important}
+.danger-btn{background:#f5e4e0!important;color:#9c493e!important}

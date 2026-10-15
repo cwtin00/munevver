@@ -531,3 +531,39 @@ body,.page{background:linear-gradient(180deg,#f8f5ee 0%,#f1eadf 100%)!important;
 .top-cat-copy strong{color:#fff!important}
 @media(min-width:700px){.hero{min-height:740px!important}}
 @media(max-width:430px){.hero{min-height:675px!important}.hero-brand-logo{width:min(100%,225px)!important}.hero-brand-name{font-size:clamp(34px,11vw,46px)!important}.hero-brand-subtitle{font-size:8px!important}.hero-contact-box{margin-top:9px!important;padding:10px 12px!important}}
+
+
+/* LOGO PALETİ: genel siteyi zarif zeytin yeşiline uyarlama */
+:root{--bg:#e7eee6;--bg-2:#d9e4d9;--panel:#f4f7f1;--panel-2:#e7eee5;--green:#647c69;--green-dark:#364f42;--line:#c5d3c3;--text:#364f42;--muted:#60776a;--orange:#647c69;--orange2:#364f42}
+html,body{background:#d8e5da!important;color:#364f42!important}
+.page{background:linear-gradient(180deg,#eaf1e8,#dae6db 55%,#e8efe6)!important}
+.hero{background:#dee9de!important}
+.hero-bg{filter:saturate(.80) brightness(.96)!important}
+.hero-overlay{background:linear-gradient(180deg,rgba(235,241,232,.18) 0%,rgba(227,237,225,.52) 50%,rgba(220,232,220,.88) 77%,#e6eee5 100%)!important}
+.glass-btn{background:rgba(234,242,232,.90)!important;color:#365342!important;border-color:#b7c9b9!important}
+.hero-brand-name,.hero-contact-item{color:#364f42!important}
+.hero-brand-subtitle{color:#5d7764!important}
+.hero-contact-box{background:#e6eee5f0!important;border-color:#b9cdbb!important;box-shadow:0 9px 25px rgba(52,79,64,.13)!important}
+.top-cat{border:2px solid #b9cebb!important;background:#d8e7da!important}
+.top-cat.active{border-color:#46674f!important}
+.top-cat:after{background:linear-gradient(to top,rgba(34,62,43,.94),rgba(34,62,43,.05) 85%)!important}
+#menuArea{background:transparent!important}
+.section-intro h1{color:#365143!important}.section-intro p,.eyebrow{color:#587363!important}
+.menu-bilgilendirme{background:#e3eee2!important;border-color:#b7cbb7!important;border-left:4px solid #5c7b60!important;color:#385644!important;box-shadow:0 8px 20px rgba(69,94,75,.09)!important}
+.feature-card,.kitchen-card{border-color:#adc3b1!important;background:#dce8dd!important;box-shadow:0 8px 24px rgba(48,77,58,.12)!important}
+.feature-card:after,.kitchen-card:after{background:linear-gradient(90deg,rgba(32,63,44,.87),rgba(33,65,47,.54) 52%,rgba(33,65,47,.04))!important}
+.feature-copy i,.kitchen-copy i{background:#c9e1cb!important}
+.feature-go,.kitchen-go{background:rgba(227,239,226,.94)!important;color:#365744!important;border-color:#b3cbb7!important}
+.product-header{border-color:#a9c2af!important}.product-header:after{background:linear-gradient(to top,rgba(30,62,44,.84),rgba(30,62,44,.03))!important}
+.product-header strong{color:#fff!important}.product-header small{color:#d2e9d2!important}
+.product{background:#f1f6ef!important;border-color:#bed2c0!important;box-shadow:0 5px 18px rgba(55,81,64,.08)!important}
+.product-info h3{color:#365143!important}.product-info p,.product-info .description{color:#6b8271!important}
+.price{background:#dfeadf!important;border:1px solid #afc6b2!important;color:#355744!important}
+.price-option:first-child{border-right-color:#acc5b0!important}.price-option small{color:#60806a!important}.price-option strong{color:#355744!important}
+.quote{color:#657e6b!important}.quote span{background:#b9cbbd!important}
+.bottom-nav{background:rgba(222,235,221,.98)!important;border-top:1px solid #b8cbb9!important;box-shadow:0 -8px 28px rgba(55,81,64,.13)!important}
+.bottom-nav button{color:#577565!important}.bottom-nav button.active{color:#294d36!important}
+.bottom-logo{background:#ecf4e9!important;border-color:#b5ccb9!important}
+.cetinweb-credit{border-color:#b6cbb8!important}.cetinweb-credit span,.cetinweb-credit a{color:#5b7462!important}.cetinweb-credit a strong{color:#375b44!important}
+.modal{background:rgba(28,53,38,.53)!important}.modal-box{background:#e9f2e8!important;border-color:#b6cbb9!important}.modal-box h3{color:#34523e!important}.modal-box p{color:#637969!important}
+.loader{background:#e0ebe0!important}.loader small{color:#55705e!important}
