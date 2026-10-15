@@ -354,7 +354,7 @@ document.getElementById("menuButton").onclick=renderMainCategories;
 
 document.getElementById("locationButton").onclick=()=>{ alert("Konum bağlantısı işletme tarafından eklenecek."); };
 
-document.getElementById("instagramButton").onclick=()=>{ alert("Instagram bağlantısı işletme tarafından eklenecek."); };
+document.getElementById("instagramButton").onclick=()=>{ window.open("https://www.instagram.com/sureyyacafeyemek/", "_blank", "noopener,noreferrer"); };
 
 const bottomLogo=document.querySelector(".bottom-logo");
 if(bottomLogo){

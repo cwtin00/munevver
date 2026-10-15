@@ -1483,64 +1483,9 @@ roofAuth
           const remoteMenu =
             snap.val();
 
-          const syncResult =
-            buildMissingOnlySync(
-              remoteMenu,
-              defaults()
-            );
-
-          const updatePaths =
-            Object.keys(
-              syncResult.updates
-            );
-
-          if(updatePaths.length) {
-
-            await roofDb
-              .ref()
-              .update(
-                syncResult.updates
-              );
-
-            adminMenu =
-              syncResult.merged;
-
-            const addedText = [];
-
-            if(syncResult.addedProducts) {
-              addedText.push(
-                syncResult.addedProducts +
-                " yeni ürün"
-              );
-            }
-
-            if(syncResult.addedSubcategories) {
-              addedText.push(
-                syncResult.addedSubcategories +
-                " yeni alt kategori"
-              );
-            }
-
-            if(syncResult.addedCategories) {
-              addedText.push(
-                syncResult.addedCategories +
-                " yeni kategori"
-              );
-            }
-
-            panelMsg.textContent =
-              "✓ Koddan eklenen " +
-              addedText.join(", ") +
-              " Firebase’e eklendi. Mevcut veriler değiştirilmedi.";
-
-          }
-
-          else {
-
-            adminMenu =
-              remoteMenu;
-
-          }
+          // Existing Firebase menu is authoritative. Never overwrite it on a deploy.
+          adminMenu = remoteMenu;
+          panelMsg.textContent = "✓ Firebase menüsü yüklendi. Mevcut ürünleriniz korundu.";
 
         }
 
@@ -1558,16 +1503,9 @@ roofAuth
 
       catch(e) {
 
-        adminMenu =
-          defaults();
-
-
+        adminMenu = [];
         render();
-
-
-        panelMsg.textContent =
-          "Veritabanı okunamadı: " +
-          e.message;
+        panelMsg.textContent = "Firebase veritabanı okunamadı. Veri kaybını önlemek için kayıt yapmayın: " + e.message;
 
       }
 
